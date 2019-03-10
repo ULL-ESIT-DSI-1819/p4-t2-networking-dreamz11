@@ -62,7 +62,7 @@ describe('LDJClient', () => {
 * @param {string} name Description
 * @param function Assert if it throws an exception if anything else than JSON is received
 */
-  it ('Should throw an exception when it is not a JSON message', done =>{
+  it ('Should throw an exception when its not formatted to JSON', done =>{
     assert.throws(()=>{
       stream.emit('data', '{"foo"\n');
     })
@@ -73,7 +73,7 @@ describe('LDJClient', () => {
 * @param {string} name Description
 * @param function Assert if the message is received correctly when sending the last one without the endline
 */
-  it ('Should proofs that if the message is complete but not with new line', done=>{
+  it ('should accept the last string of message without the endline boundary when closed', done=>{
     client.on('message', message => {
       assert.deepEqual(message, {foo: 'bar'});
       done();
