@@ -15,11 +15,11 @@ Probamos esto facilmente y este es el resultado
 
 Sin interpretar los JSON correctamente:
 
-![](networking/1.png);
+![](1.png);
 
 Interpretandolos correctamente:
 
-![](networking/2.png);
+![](2.png);
 
 Por ahora el codigo no esta perfecto. Ya que si se mandan mensajes muy grandes no se podría mandar todo en un solo "chunk" de dato y entonces los mensajes no llegarían correctamente ya que nuestro programa no sabe cuando acaba un mensaje de evento. Por tanto introducimos los boundary /n despues de cada uno de los mensajes para poder separarlos y para ello hicimos un modulo de la clase Eventemitter y la extendimos para que haga esto. Dividimos los mensajes estableciendo el fin de cada uno de ellos con el string de endline /n y cada vez que se encontraba un caracter de esto enviabamos hasta esa parte del mensaje y asi sucesivamente.
 
@@ -33,7 +33,7 @@ Para la semántica de las versiones de cada uno de los productos se utiliza el f
 Ejercicios:
 
 
-![](networking/3.png);
+![](3.png);
 
 
 Travis:
